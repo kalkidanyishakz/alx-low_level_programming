@@ -1,33 +1,20 @@
 #include <stdio.h>
 
 /**
-* main - Prints first 50 Fibonacci numbers, starting with 1 and 2,
-*        separated by a comma followed by a space.
-*
-* Return: Always 0.
-*/
+ * main - Prints natural numbers below 1024 that are
+ * multiplies of 3 or 5
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int count;
-	unsigned long fib1 = 0, fib2 = 1, sum;
+	int a, b;
 
-
-	for (count = 0; count < 50; count++)
+	for (a = 1; a < 1024; a++)
 	{
-		sum = fib1 + fib2;
-		printf("%lu", sum);
-
-
-		fib1 = fib2;
-		fib2 = sum;
-
-
-		if (count == 49)
-			printf("\n");
-		else
-			printf(", ");
+		if ((a % 3) == 0 || (a % 5) == 0)
+			b += a;
 	}
-
-
+	printf("%d\n", b);
 	return (0);
 }
